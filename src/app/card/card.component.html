@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title> {{projectData.title}}</mat-card-title>
+            <mat-card-subtitle>{{projectData.subtitle}}</mat-card-subtitle>
+            <div mat-card-avatar class="avatar">{{projectData.id}}</div>
+
+        </mat-card-title-group>
+
+    </mat-card-header>
+    <mat-card-content>
+        <div class="" *ngFor="let i of projectData.image | keyvalue">
+            <img src="{{i.key}}" alt="{{i.value}}">
+        </div>
+        <p>
+            {{projectData.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="(projectData.link)">
+
+        <a href="{{projectData.link}}" mat-raised-button target="_blank" rel="noopener noreferrer" mat-button>link</a>
+
+    </mat-card-actions>
+    <mat-card-footer *ngIf="(projectData.footer)">
+        {{projectData.footer}}
+    </mat-card-footer>
+</mat-card>

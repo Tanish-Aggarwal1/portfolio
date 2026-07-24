@@ -1,0 +1,25 @@
+<h2>About Me:</h2>
+<img src="{{aboutMe.myImg}}" id="myImage" alt="My Picture">
+<p>
+    Age: {{age}} <br>
+    {{aboutMe.aboutMe}}
+</p>
+<!-- <p>
+    {{aboutMe.aboutMeLine2}}
+</p> -->
+
+<h2>Skills:</h2>
+<ul>
+    @for (skill of aboutMe.skills; track skill) {
+        <li><strong>{{skill.skill}}:</strong> <span></span> <div class="details">{{skill.details}}</div></li>
+    }
+</ul>
+
+
+<!-- Placeholder resume, I don't have a proper resume yet 😅 -->
+<!-- from codeease -->
+<a href="./files/res.pdf" download>
+    <button mat-raised-button class="resume" type="button">Download Resume</button>
+</a>
+
+<hr class="divider">

@@ -1,0 +1,68 @@
+* {
+    color: white;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.white {
+    color: white;
+}
+
+
+
+.resume {
+    padding: 10px;
+    border-radius: 1em;
+}
+
+.resume:hover {
+    transform: translate(0, -0.1em);
+    transition: transform 0.5s ease;
+}
+
+img {
+    aspect-ratio: 1/1;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1em;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.list {
+    display: block;
+}
+
+.key {
+    font-size: 1.1em;
+
+}
+
+.value {
+    padding-left: 40px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0.2em auto;
+    font-size: 1.5em;
+
+}
+
+strong {
+    font-weight: 500;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}

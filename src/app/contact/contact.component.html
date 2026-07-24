@@ -1,0 +1,16 @@
+<address>
+    Address: {{contact.address}}
+</address>
+
+Socials:
+    <ul>
+        @for (s of socials; track s.name) {
+            <li><a href="{{s.link}}" mat-raised-button target="_blank">{{s.name}}</a></li>
+
+        }
+    </ul>
+
+<ul>
+    <li><mat-icon color="primary">mail</mat-icon> {{contact.mail}}</li>
+    <li><mat-icon color="primary">phone</mat-icon> {{contact.phone}}</li>
+</ul>

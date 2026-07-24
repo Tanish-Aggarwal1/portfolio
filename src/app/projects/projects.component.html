@@ -1,0 +1,35 @@
+
+<!-- 
+Took the form-field and clear button code from angular material 
+https://v7.material.angular.io/components/input/examples#:~:text=Input%20with%20a%20clear%20button -->
+
+<mat-form-field class="example-form-field">
+    <input matInput type="text" placeholder="Clearable input" [(ngModel)]="projectName">
+    @if (projectName) {
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="projectName=''; showProjects(projectName)">
+        <mat-icon>close</mat-icon>
+    </button>
+    }
+    <input type="submit" class="find" value="Find" (click)="showProjects(projectName)">
+</mat-form-field>
+<button matSuffix mat-raised-button aria-label="Clear" (click)="projectName=''; showProjects(projectName)">
+    Show All
+</button>
+
+<hr>
+
+
+@if (filteredData) {
+    <div class="grid">
+        @for (project of filteredData; track project.id; let c = $index) {
+        <app-card [projectData]="project" id="p{{c+1}}"></app-card>
+        }
+    </div>
+} @else {
+    <div class="grid">
+        @for (project of projects; track project.id; let c = $index) {
+        <app-card [projectData]="project" id="p{{c+1}}"></app-card>
+        }
+    </div>
+}
+

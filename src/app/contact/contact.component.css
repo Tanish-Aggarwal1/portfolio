@@ -1,0 +1,12 @@
+ul > li {
+    display: inline;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+text-decoration: none;
+}

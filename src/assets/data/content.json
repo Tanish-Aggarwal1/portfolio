@@ -1,0 +1,60 @@
+{
+  "myData": {
+    "first": "Tanish",
+    "last": "Aggarwal",
+    "id": 991760172,
+    "role": "Software developer",
+  "motto": "",
+    "socials": [
+      {
+        "name": "Linked-In",
+        "link": "https://www.linkedin.com/in/tanish-aggarwal-77b427309?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4jYxXaVxTTWNDtsUSBUnmQ%3D%3D"
+      },
+      {
+        "name": "Github",
+        "link": "https://github.com/RaaOne111"
+      },
+      {
+        "name": "Snapchat",
+        "link": "https://www.snapchat.com/add/tanish_the1?share_id=xOmpQxOJK3w&locale=en-CA"
+      },
+      {
+        "name": "Instagram",
+        "link": "https://www.instagram.com/tanish__aggarwal_?igsh=NGVsbGJvMGk1am03"
+      }
+    ],
+    "contact": {
+      "address": "2066 Barnboard Hollow, Oakville",
+      "mail": "atanish6@gmail.com",
+      "phone": "+1 (289)885-7256"
+    }
+  },
+  "about": {
+    "myImg": "./images/me.webp",
+    "aboutMe": "I am currently enrolled in the 3-Year Computer Systems Technology - Software Development And Network Engineering (SDNE) Program at Sheridan College, Oakville. I want to become a full stack developer in the future.",
+    "aboutMeLine2": "I am a ambivert and some of my interests are coding, music, anime, food, badminton, art and Harry Potter. I also read manga sometimes and really love superhero movies like Marvel and DC. ",
+    "skills": [
+      { "skill": "Cloud Architecture", "details": "Architecture, Microservices and Cloud Computing" },
+      { "skill": "AI-Ml", "details": "Data Engineering and Science, RAGs, Agents, Web Services" },
+      { "skill": "Java", "details": "SpringBoot, Thymeleaf, OOPS" },
+      { "skill": "Web Development", "details": "NodeJS, Angular, HTML, CSS, Javascript" }
+    ]
+    
+  },
+
+  "footer": {
+    "unsplash": "https://unsplash.com/photos/an-airplane-is-flying-in-the-blue-sky-xwb9RDqZKu8",
+  "dev": "https://dev.to/okonkwomandy/the-easiest-way-to-build-the-pinterest-layout-without-using-a-framework-3i0g",
+  "splash": "https://www.squash.io/tutorial-date-subtraction-in-typescript/",
+  "codeease": "https://www.codeease.net/programming/html/how-to-download-file-html-button",
+  "material": "https://v7.material.angular.io/components/input/examples#:~:text=Input%20with%20a%20clear%20button",
+  "item1": "HTML",
+  "item2": "CSS",
+  "item2line": "To make it my own ",
+  "item3": "Angular",
+  "item3line": "To make it efficient and reusable ",
+  "item4": "Typescript",
+  "item4line": "For string interpolation for easy changes.",
+  "listHeading": "Technologies used to create this portfolio:"
+  }
+}

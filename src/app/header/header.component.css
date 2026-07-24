@@ -1,0 +1,42 @@
+* {
+    width: 100%;
+    text-align: center;
+    color: rgb(43, 172, 253);
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h2, h3 {
+    font-weight: 400;
+}
+
+span {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+ul > li {
+    display: inline;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+text-decoration: none;
+width: 75%;
+}
+
+header{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}

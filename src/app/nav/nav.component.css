@@ -1,0 +1,23 @@
+* {
+    color: white;
+}
+
+a {
+    font-size: 1.5em;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding: 7.5px 25px;
+}
+
+li {
+    margin: 4px;
+    padding: 2.5px;
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}

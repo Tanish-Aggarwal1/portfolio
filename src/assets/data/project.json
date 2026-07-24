@@ -1,0 +1,78 @@
+{
+    "projects": [
+    {
+      "id": 101,
+      "title": "My World Website",
+      "subtitle": "Final Assignment for web1",
+      "image": {
+        "./images/myworld.webp": "My World"
+      },
+      "link": "http://aggatani.dev.fast.sheridanc.on.ca/assignment 4",
+      "description": "This Website was made for web development course in semester 1. This is a fully responsive and accessible website.",
+      "tags": ["HTML", "CSS"],
+      "footer": "I used semantic HTML and CSS flexbox to make this website"
+    },
+    {
+      "id": 103,
+      "title": "Best Anime Awards",
+      "subtitle": "Describes the best rated anime of the corresponding year",
+      "image": {
+        "./images/project2.webp": "Website Image"
+      },
+      "link": "http://aggatani.dev.fast.sheridanc.on.ca/bestAnime",
+      "description": "This website is an assignment made for web2 which ranks the best anime bases on their year of release and provides their ratings and wallpapers for the years inquired.",
+      "tags": ["NodeJs"],
+      "footer": "I used NodeJs, NPM, Express for this project."
+    },
+    {
+      "id": 105,
+      "title": "AI Prompt Generator Form",
+      "subtitle": "Generates a form to get a result from the ai",
+      "image": {
+        "./images/aiForm.webp": "HomePage",
+        "./images/lastPrompt.webp": "Last Prompt Image"
+      },
+      "link": "https://aggatani.dev.fast.sheridanc.on.ca/aiFormData/",
+      "description": "This was an assignment for web2 which includes a single page form that that requires you to fill out a form and then spouts out a prompt that you can give to an ai to generate a story based on your choices",
+      "tags": [""],
+      "footer": "I used NodeJs, NPM, Express for this project."
+    },
+    {
+      "id": 102,
+      "title": "Library Book Collection",
+      "subtitle": "A database entry program",
+      "image": {
+        "./images/java1.webp": "Project Homepage",
+        "./images/java2.webp": "A data entry page"
+      },
+      "link": "",
+      "description": "This is a java springboot project that has a database entry system for different types of book types. You can enter different types of information regarding the books like ID, Title, author and different imformation for specific types.",
+      "tags": [""],
+      "footer": "I used Java springboot, Thymeleaf and mySQL database for this project."
+    },
+    {
+      "id": 104,
+      "title": "Mareen Life",
+      "subtitle": "A game promoting save oceans",
+      "image": {
+        "./images/mareenlife.webp": "gameplay"
+      },
+      "link": "https://aggatani.dev.fast.sheridanc.on.ca/assignment%204/content/coding.html",
+      "description": "This is a game I made in 10th standard for a game jam and I won second prize in this. The theme was save oceans and in this game the objective was to keep the ocean clean for as long as possible from the falling debris.",
+      "tags": [""],
+      "footer": ""
+    },
+    {
+      "id": 106,
+      "title": "Evergreen",
+      "subtitle": "Self recharging electric car",
+      "image": {
+        "./images/bus.webp": "Model of the project"
+      },
+      "link": "http://aggatani.dev.fast.sheridanc.on.ca/assignment 4",
+      "description": "This is a project made by me and my friend for a national competition in which we made a student counter for school buses so that it keeps track of when and where the students got off to alert the driver and also an automatic speed control and brake system for school buses in case of really foggy weathers which are really severe back home.",
+      "tags": [""],
+      "footer": "I used arduino, C++ for this project."
+    }
+  ]
+}

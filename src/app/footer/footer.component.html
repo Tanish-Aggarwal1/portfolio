@@ -1,0 +1,15 @@
+<hr>
+
+<footer>
+    <p class="stretch">
+        <span>&copy; Sheridan College &copy; Made by: {{ personal.first | uppercase }} {{ personal.last | uppercase }} </span>
+        <span>{{cdate | date}}</span>
+    </p>
+
+    
+   
+    <app-contact [socials]="personal.socials" [contact]="personal.contact"></app-contact>
+
+   
+</footer>
+<hr>
