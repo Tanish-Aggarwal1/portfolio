@@ -1,5 +1,6 @@
 import { AfterViewInit, DestroyRef, Directive, ElementRef, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RevealOnScrollService } from '../core/reveal-on-scroll.service';
 
 @Directive({
   selector: '[appRevealOnScroll]',
@@ -9,6 +10,7 @@ export class RevealOnScrollDirective implements AfterViewInit {
   private readonly el = inject(ElementRef<HTMLElement>);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly revealService = inject(RevealOnScrollService);
 
   ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) {
@@ -21,19 +23,9 @@ export class RevealOnScrollDirective implements AfterViewInit {
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            this.el.nativeElement.classList.add('reveal-visible');
-            observer.unobserve(entry.target);
-          }
-        }
-      },
-      { threshold: 0.1, rootMargin: '0px 0px 150px 0px' },
-    );
-
-    observer.observe(this.el.nativeElement);
-    this.destroyRef.onDestroy(() => observer.disconnect());
+    this.revealService.observe(this.el.nativeElement, () => {
+      this.el.nativeElement.classList.add('reveal-visible');
+    });
+    this.destroyRef.onDestroy(() => this.revealService.unobserve(this.el.nativeElement));
   }
 }
