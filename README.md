@@ -1,59 +1,77 @@
-# PortfolioSource
+# Tanish Aggarwal — Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+Personal portfolio site built with Angular 20, showcasing projects, skills, and
+experience. Live at **[tanishaggarwal.dev](https://tanishaggarwal.dev)**.
 
-## Development server
+## Tech stack
 
-To start a local development server, run:
+- **Angular 20** — standalone components only, no `NgModule`
+- **Signals** for all component state (`input()`, `signal()`, `computed()`); zero
+  `zone.js` — the app runs on `provideZonelessChangeDetection()`
+- **SSR + prerendering** via `@angular/ssr`, with an Express server for
+  environments that need on-demand rendering
+- **Client hydration** with event replay, so interactions that happen before
+  hydration finishes aren't dropped
+- **TypeScript strict mode** (`strict`, `noImplicitReturns`,
+  `noPropertyAccessFromIndexSignature`) plus Angular's `strictTemplates` and
+  `strictInputAccessModifiers` across the whole app
 
-```bash
-ng serve
-```
+No CSS framework or component library — the design system (tokens, layout
+utilities, dark/light theme) lives in `src/styles.css`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Getting started
 
 ```bash
-ng build
+npm install
+npm start          # dev server at http://localhost:4200
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-ng test
+npm run build       # production build + prerender, output in ../portfolio (see Deployment)
+npm test            # unit tests via Karma/Jasmine, headless Chrome
 ```
 
-## Running end-to-end tests
+## Project structure
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+src/app/
+  core/            # ThemeService, shared services, and content model types
+  shared/          # cross-cutting directives/components (reveal-on-scroll, icon)
+  header/ nav/ about/ skills/ projects/ card/
+  experience/ education/ contact/ footer/
+                   # one folder per page section, each a standalone component
+src/assets/data/   # JSON content (personal info, projects, skills, etc.)
+                   # — edit these to update the site's content, no code changes needed
+public/            # static assets served as-is (images, resume, robots.txt, sitemap.xml)
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Each section component takes its content as `input()`s from `AppComponent`,
+which owns the data loaded from `src/assets/data/*.json`. There's no backend
+and no client-side routing — it's a single prerendered page.
 
-## Additional Resources
+## Notable implementation details
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Scroll-spy nav** — the nav highlights the section currently in view using
+  a single shared `IntersectionObserver`, not a per-link observer.
+- **Shared reveal-on-scroll observer** — the fade-in-on-scroll effect used
+  across skill/project/education cards is backed by one
+  `RevealOnScrollService` observer instance rather than one per element.
+- **Theme persistence** — theme choice is read synchronously in
+  `index.html` (before Angular bootstraps) to avoid a flash of the wrong
+  theme, then kept in sync with `localStorage` via a signal `effect()` in
+  `ThemeService`.
+
+## Deployment
+
+There are two build paths, depending on target:
+
+- **`npm run build`** — runs `ng build --output-path ../portfolio --base-href
+  /portfolio/`, producing a prerendered static site one directory up (outside
+  this repo), for static hosting under a `/portfolio/` path (e.g. GitHub
+  Pages). Only the browser output is needed for this target.
+- **`ng build`** (no override) — builds to the default `dist/portfolio_source/`
+  using `angular.json`'s config, producing both `browser/` and `server/`
+  output. `npm run serve:ssr:portfolio_source` runs `server/server.mjs`
+  (`src/server.ts`, an Express app via `@angular/ssr`) against that output,
+  for deployments that want on-demand SSR instead of a static prerendered
+  page.
