@@ -19,6 +19,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Lint
+        run: npx ng lint
+
       - name: Build (prerendered, production)
         run: npx ng build
 

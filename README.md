@@ -32,10 +32,11 @@ npm start          # dev server at http://localhost:4200
 ```bash
 npm run build       # production build + prerender, output in ../portfolio (see Deployment)
 npm test            # unit tests via Karma/Jasmine, headless Chrome
+npm run lint        # angular-eslint, TS + templates
 ```
 
-`.github/workflows/ci.yml` runs the production build and the full test suite
-on every push/PR to `main`.
+`.github/workflows/ci.yml` runs lint, the production build, and the full test
+suite on every push/PR to `main`.
 
 ## Project structure
 
