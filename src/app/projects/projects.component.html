@@ -24,7 +24,12 @@
         }
       </div>
     } @else {
-      <p class="no-results">No projects match "{{ query() }}".</p>
+      <div class="no-results">
+        <app-icon name="search" [size]="28" />
+        <p class="no-results-title">No projects found</p>
+        <p class="no-results-detail">Nothing matches "{{ query() }}". Try a different search term.</p>
+        <button type="button" class="btn btn-secondary" (click)="query.set('')">Clear search</button>
+      </div>
     }
   </div>
 </section>
