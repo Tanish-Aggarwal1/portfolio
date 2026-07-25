@@ -4,7 +4,15 @@
 
     <ul id="nav-links" class="nav-links" [class.open]="menuOpen()">
       @for (section of sections(); track section.id) {
-        <li><a [href]="'#' + section.id" (click)="closeMenu()">{{ section.label }}</a></li>
+        <li>
+          <a
+            [href]="'#' + section.id"
+            [class.active]="activeId() === section.id"
+            [attr.aria-current]="activeId() === section.id ? 'location' : null"
+            (click)="closeMenu()"
+            >{{ section.label }}</a
+          >
+        </li>
       }
     </ul>
 

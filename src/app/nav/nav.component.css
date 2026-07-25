@@ -42,6 +42,22 @@
   color: var(--accent);
 }
 
+.nav-links a.active {
+  color: var(--accent);
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.85rem;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -99,5 +115,15 @@
   .nav-links a {
     display: block;
     padding: var(--space-4) var(--space-5);
+    border-left: 2px solid transparent;
+  }
+
+  .nav-links a.active {
+    border-left-color: var(--accent);
+    background: var(--color-surface-hover);
+  }
+
+  .nav-links a.active::after {
+    content: none;
   }
 }
