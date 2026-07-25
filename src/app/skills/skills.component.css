@@ -1,10 +1,13 @@
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-5);
 }
 
 .skill-group {
+  flex: 1 1 240px;
+  max-width: 320px;
   padding: var(--space-5);
 }
 
