@@ -17,6 +17,7 @@
   --radius-lg: 24px;
 
   --container-width: 1120px;
+  --nav-height: 3.9rem;
 
   --transition-base: 200ms ease;
 
@@ -166,7 +167,7 @@ button {
 .section {
   padding: var(--space-8) 0;
   border-bottom: 1px solid var(--color-border);
-  scroll-margin-top: 4.5rem;
+  scroll-margin-top: var(--nav-height);
 }
 
 .section:last-of-type {
