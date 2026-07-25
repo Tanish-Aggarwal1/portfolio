@@ -78,6 +78,18 @@
   }
 }
 
+/* ---------- Component host elements ---------- */
+/* Angular component hosts are unknown elements and default to `display: inline`,
+   which breaks position:sticky (its containing block collapses to the sticky
+   child's own height, so it can't hold position past that). */
+app-root {
+  display: block;
+}
+
+app-nav {
+  display: contents;
+}
+
 /* ---------- Reset ---------- */
 *,
 *::before,
