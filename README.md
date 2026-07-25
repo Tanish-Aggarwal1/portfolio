@@ -31,6 +31,9 @@ npm run build       # production build + prerender, output in ../portfolio (see 
 npm test            # unit tests via Karma/Jasmine, headless Chrome
 ```
 
+`.github/workflows/ci.yml` runs the production build and the full test suite
+on every push/PR to `main`.
+
 ## Project structure
 
 ```
