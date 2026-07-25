@@ -1,27 +1,35 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title-group>
-            <mat-card-title> {{projectData.title}}</mat-card-title>
-            <mat-card-subtitle>{{projectData.subtitle}}</mat-card-subtitle>
-            <div mat-card-avatar class="avatar">{{projectData.id}}</div>
+<article class="project-card card" appRevealOnScroll>
+  <div class="project-media">
+    @for (img of project().image | keyvalue; track img.key) {
+      <img [src]="img.key" [alt]="img.value" loading="lazy" (error)="onImageError($event)" />
+    }
+  </div>
 
-        </mat-card-title-group>
+  <div class="project-body">
+    <header>
+      <h3>{{ project().title }}</h3>
+      <p class="project-subtitle">{{ project().subtitle }}</p>
+    </header>
 
-    </mat-card-header>
-    <mat-card-content>
-        <div class="" *ngFor="let i of projectData.image | keyvalue">
-            <img src="{{i.key}}" alt="{{i.value}}">
-        </div>
-        <p>
-            {{projectData.description}}
-        </p>
-    </mat-card-content>
-    <mat-card-actions *ngIf="(projectData.link)">
+    <p class="project-description">{{ project().description }}</p>
 
-        <a href="{{projectData.link}}" mat-raised-button target="_blank" rel="noopener noreferrer" mat-button>link</a>
+    <ul class="project-tags">
+      @for (tag of project().tags; track tag) {
+        @if (tag) {
+          <li class="badge">{{ tag }}</li>
+        }
+      }
+    </ul>
 
-    </mat-card-actions>
-    <mat-card-footer *ngIf="(projectData.footer)">
-        {{projectData.footer}}
-    </mat-card-footer>
-</mat-card>
+    @if (project().footer) {
+      <p class="project-footer">{{ project().footer }}</p>
+    }
+
+    @if (project().link) {
+      <a class="btn btn-secondary project-link" [href]="project().link" target="_blank" rel="noopener noreferrer">
+        <app-icon name="external-link" [size]="16" />
+        View project
+      </a>
+    }
+  </div>
+</article>

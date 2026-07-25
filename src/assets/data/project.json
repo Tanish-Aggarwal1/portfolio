@@ -1,5 +1,5 @@
 {
-    "projects": [
+  "projects": [
     {
       "id": 101,
       "title": "My World Website",
@@ -7,7 +7,7 @@
       "image": {
         "./images/myworld.webp": "My World"
       },
-      "link": "http://aggatani.dev.fast.sheridanc.on.ca/assignment 4",
+      "link": "http://aggatani.dev.fast.sheridanc.on.ca/assignment%204",
       "description": "This Website was made for web development course in semester 1. This is a fully responsive and accessible website.",
       "tags": ["HTML", "CSS"],
       "footer": "I used semantic HTML and CSS flexbox to make this website"
@@ -69,7 +69,7 @@
       "image": {
         "./images/bus.webp": "Model of the project"
       },
-      "link": "http://aggatani.dev.fast.sheridanc.on.ca/assignment 4",
+      "link": "http://aggatani.dev.fast.sheridanc.on.ca/assignment%204",
       "description": "This is a project made by me and my friend for a national competition in which we made a student counter for school buses so that it keeps track of when and where the students got off to alert the driver and also an automatic speed control and brake system for school buses in case of really foggy weathers which are really severe back home.",
       "tags": [""],
       "footer": "I used arduino, C++ for this project."

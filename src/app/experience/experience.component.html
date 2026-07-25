@@ -1,0 +1,29 @@
+<section id="experience" class="section" aria-labelledby="experience-heading">
+  <div class="container">
+    <span class="section-eyebrow">Experience</span>
+    <h2 id="experience-heading" class="section-heading">Where I've worked</h2>
+
+    <ol class="timeline">
+      @for (entry of entries(); track entry.id) {
+        <li class="timeline-item" appRevealOnScroll>
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-content card">
+            <p class="timeline-dates">{{ entry.startDate }} – {{ entry.endDate ?? 'Present' }}</p>
+            <h3>{{ entry.role }}</h3>
+            <p class="timeline-org">
+              {{ entry.organization }}
+              @if (entry.location) {
+                <span>· {{ entry.location }}</span>
+              }
+            </p>
+            <ul>
+              @for (highlight of entry.highlights; track highlight) {
+                <li>{{ highlight }}</li>
+              }
+            </ul>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

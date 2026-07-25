@@ -1,26 +1,29 @@
-import { Component, Input } from '@angular/core';
-import { Projects } from '../classes';
+import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
+import { Project } from '../core/models/portfolio.models';
+import { CardComponent } from '../card/card.component';
+import { IconComponent } from '../shared/icon/icon.component';
 
 @Component({
   selector: 'app-projects',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CardComponent, IconComponent],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+  styleUrl: './projects.component.css',
 })
 export class ProjectsComponent {
-  @Input() projects!:Projects[];
+  projects = input.required<Project[]>();
 
-  projectName:string = "";
+  protected readonly query = signal('');
 
-  filteredData!:Projects[];
-
-  showProjects(name: string) {
-    if (name === '') {
-      this.filteredData = this.projects
-    } else {
-      this.filteredData = this.projects.filter((project) => project.title.toLowerCase().includes(name.toLowerCase()))
+  protected readonly filteredProjects = computed(() => {
+    const q = this.query().trim().toLowerCase();
+    if (!q) {
+      return this.projects();
     }
+    return this.projects().filter((project) => project.title.toLowerCase().includes(q));
+  });
+
+  protected onSearchInput(event: Event): void {
+    this.query.set((event.target as HTMLInputElement).value);
   }
-
-  
-
 }

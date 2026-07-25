@@ -1,0 +1,43 @@
+<section id="education" class="section" aria-labelledby="education-heading">
+  <div class="container">
+    <span class="section-eyebrow">Education</span>
+    <h2 id="education-heading" class="section-heading">Academic background</h2>
+
+    <div class="education-list">
+      @for (entry of entries(); track entry.id) {
+        <div class="education-card card" appRevealOnScroll>
+          <p class="education-dates">{{ entry.startDate }} – {{ entry.endDate }}</p>
+          <h3>{{ entry.program }}</h3>
+          <p class="education-institution">
+            {{ entry.institution }}
+            @if (entry.location) {
+              <span>· {{ entry.location }}</span>
+            }
+          </p>
+          @if (entry.details?.length) {
+            <ul>
+              @for (detail of entry.details; track detail) {
+                <li>{{ detail }}</li>
+              }
+            </ul>
+          }
+        </div>
+      }
+    </div>
+
+    @if (certifications().length) {
+      <h3 class="certifications-heading">Certifications</h3>
+      <ul class="certifications-list">
+        @for (cert of certifications(); track cert.id) {
+          <li class="badge">
+            @if (cert.url) {
+              <a [href]="cert.url" target="_blank" rel="noopener noreferrer">{{ cert.name }} · {{ cert.issuer }}</a>
+            } @else {
+              {{ cert.name }} · {{ cert.issuer }}
+            }
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</section>

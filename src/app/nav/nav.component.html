@@ -1,19 +1,33 @@
-<nav>
-    <div class="left">
-        <ul>
+<nav class="site-nav" aria-label="Section navigation">
+  <div class="nav-inner container">
+    <a class="brand" href="#top" (click)="closeMenu()">TA</a>
 
-            <li><a href="#p1" mat-raised-button> My World Website </a></li>
-            <li><a href="#p2" mat-raised-button> Best Anime Awards </a></li>
-            <li><a href="#p3" mat-raised-button> Ai Prompt generator form </a></li>
-        </ul>
+    <ul id="nav-links" class="nav-links" [class.open]="menuOpen()">
+      @for (section of sections(); track section.id) {
+        <li><a [href]="'#' + section.id" (click)="closeMenu()">{{ section.label }}</a></li>
+      }
+    </ul>
+
+    <div class="nav-actions">
+      <button
+        type="button"
+        class="icon-btn theme-toggle"
+        (click)="theme.toggle()"
+        [attr.aria-label]="theme.theme() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+      >
+        <app-icon [name]="theme.theme() === 'dark' ? 'sun' : 'moon'" [size]="18" />
+      </button>
+
+      <button
+        type="button"
+        class="icon-btn menu-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="nav-links"
+        aria-label="Toggle navigation menu"
+      >
+        <app-icon [name]="menuOpen() ? 'close' : 'menu'" [size]="18" />
+      </button>
     </div>
-
-    <div class="right">
-        <ul>
-            <li><a href="#p4" mat-raised-button> Library Book Collection</a></li>
-            <li><a href="#p5" mat-raised-button> Mareen Life </a></li>
-            <li><a href="#p6" mat-raised-button> Evergreen </a></li>
-        </ul>
-
-    </div>
+  </div>
 </nav>

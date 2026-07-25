@@ -1,13 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { Personal } from '../classes';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Personal } from '../core/models/portfolio.models';
+import { IconComponent } from '../shared/icon/icon.component';
 
 @Component({
   selector: 'app-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [IconComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  @Input() personal!:Personal;
-  @Input() socials!:{name: string, link: string}[];
-  
+  personal = input.required<Personal>();
 }

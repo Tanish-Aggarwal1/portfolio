@@ -1,11 +1,25 @@
-<header>
-    <div>
-        Hello! I am
-        <h1>{{personal.first}} {{personal.last}} </h1>
-        <h2>{{personal.role}}</h2>
-        <!-- <h3><span>My Motto:</span> {{personal.motto}}</h3> -->
+<header id="top" class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+    <p class="hero-eyebrow">Hello, I'm</p>
+    <h1 class="hero-name">{{ personal().first }} {{ personal().last }}</h1>
+    <p class="hero-role">{{ personal().role }}</p>
+    <p class="hero-tagline">{{ personal().tagline }}</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+      @if (personal().resumeUrl) {
+        <a class="btn btn-secondary" [href]="personal().resumeUrl" download>
+          <app-icon name="download" [size]="16" />
+          Resume
+        </a>
+      }
     </div>
+  </div>
 
-
+  <a class="scroll-hint" href="#about" aria-label="Scroll to About section">
+    <app-icon name="chevron-down" [size]="26" />
+  </a>
 </header>
-<hr>

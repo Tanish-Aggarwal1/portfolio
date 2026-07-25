@@ -1,15 +1,17 @@
-import { Component, Input } from '@angular/core';
-import { Personal } from '../classes';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { FooterContent, Personal } from '../core/models/portfolio.models';
+import { IconComponent } from '../shared/icon/icon.component';
 
 @Component({
   selector: 'app-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [IconComponent],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrl: './footer.component.css',
 })
 export class FooterComponent {
-  cdate = new Date();
+  personal = input.required<Personal>();
+  footer = input.required<FooterContent>();
 
-  @Input() personal!:Personal;
-  @Input() footer!:any;
-  
+  protected readonly year = new Date().getFullYear();
 }

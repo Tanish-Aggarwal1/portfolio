@@ -1,16 +1,39 @@
-<address>
-    Address: {{contact.address}}
-</address>
+<section id="contact" class="section" aria-labelledby="contact-heading">
+  <div class="container contact-grid">
+    <div class="contact-intro">
+      <span class="section-eyebrow">Contact</span>
+      <h2 id="contact-heading" class="section-heading">Let's build something together</h2>
+      <p class="section-intro">
+        Open to internship and new-grad software developer opportunities. Reach out — I'd love to talk.
+      </p>
 
-Socials:
-    <ul>
-        @for (s of socials; track s.name) {
-            <li><a href="{{s.link}}" mat-raised-button target="_blank">{{s.name}}</a></li>
-
+      <div class="contact-details">
+        <a class="contact-line" [href]="'mailto:' + personal().contact.mail">
+          <app-icon name="mail" [size]="18" />
+          {{ personal().contact.mail }}
+        </a>
+        @if (personal().contact.phone) {
+          <a class="contact-line" [href]="'tel:' + personal().contact.phone">
+            <app-icon name="phone" [size]="18" />
+            {{ personal().contact.phone }}
+          </a>
         }
-    </ul>
+        <span class="contact-line">
+          <app-icon name="map-pin" [size]="18" />
+          {{ personal().contact.city }}
+        </span>
+      </div>
+    </div>
 
-<ul>
-    <li><mat-icon color="primary">mail</mat-icon> {{contact.mail}}</li>
-    <li><mat-icon color="primary">phone</mat-icon> {{contact.phone}}</li>
-</ul>
+    <ul class="contact-socials">
+      @for (social of personal().socials; track social.name) {
+        <li>
+          <a class="social-link card" [href]="social.link" target="_blank" rel="noopener noreferrer">
+            <span>{{ social.name }}</span>
+            <app-icon name="external-link" [size]="16" />
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

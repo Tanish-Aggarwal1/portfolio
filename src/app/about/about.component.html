@@ -1,25 +1,38 @@
-<h2>About Me:</h2>
-<img src="{{aboutMe.myImg}}" id="myImage" alt="My Picture">
-<p>
-    Age: {{age}} <br>
-    {{aboutMe.aboutMe}}
-</p>
-<!-- <p>
-    {{aboutMe.aboutMeLine2}}
-</p> -->
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="container about-grid">
+    <div class="about-media">
+      @if (!imageFailed()) {
+        <img
+          [src]="about().myImg"
+          alt="Portrait of Tanish Aggarwal"
+          width="320"
+          height="320"
+          loading="lazy"
+          (error)="imageFailed.set(true)"
+        />
+      } @else {
+        <div class="avatar-placeholder" aria-hidden="true">TA</div>
+      }
+    </div>
 
-<h2>Skills:</h2>
-<ul>
-    @for (skill of aboutMe.skills; track skill) {
-        <li><strong>{{skill.skill}}:</strong> <span></span> <div class="details">{{skill.details}}</div></li>
-    }
-</ul>
+    <div class="about-copy">
+      <span class="section-eyebrow">About</span>
+      <h2 id="about-heading" class="section-heading">A bit about me</h2>
 
+      <p>{{ about().aboutMe }}</p>
+      <p>{{ about().aboutMeLine2 }}</p>
 
-<!-- Placeholder resume, I don't have a proper resume yet 😅 -->
-<!-- from codeease -->
-<a href="./files/res.pdf" download>
-    <button mat-raised-button class="resume" type="button">Download Resume</button>
-</a>
+      <div class="goal-card card">
+        <h3>Career goal</h3>
+        <p>{{ about().careerGoal }}</p>
+      </div>
 
-<hr class="divider">
+      <h3 class="about-subheading">Beyond code</h3>
+      <ul class="interest-list">
+        @for (interest of about().interests; track interest) {
+          <li class="badge">{{ interest }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

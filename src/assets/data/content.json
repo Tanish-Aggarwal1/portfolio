@@ -2,59 +2,89 @@
   "myData": {
     "first": "Tanish",
     "last": "Aggarwal",
-    "id": 991760172,
-    "role": "Software developer",
-  "motto": "",
+    "role": "Software Developer",
+    "tagline": "Full-stack developer in training — building cloud-native apps, AI-powered tools, and clean web experiences with Java, Angular, and Node.",
+    "resumeUrl": "./files/res.pdf",
     "socials": [
       {
-        "name": "Linked-In",
-        "link": "https://www.linkedin.com/in/tanish-aggarwal-77b427309?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4jYxXaVxTTWNDtsUSBUnmQ%3D%3D"
+        "name": "LinkedIn",
+        "link": "https://www.linkedin.com/in/tanish-aggarwal-77b427309"
       },
       {
-        "name": "Github",
+        "name": "GitHub",
         "link": "https://github.com/RaaOne111"
-      },
-      {
-        "name": "Snapchat",
-        "link": "https://www.snapchat.com/add/tanish_the1?share_id=xOmpQxOJK3w&locale=en-CA"
       },
       {
         "name": "Instagram",
         "link": "https://www.instagram.com/tanish__aggarwal_?igsh=NGVsbGJvMGk1am03"
+      },
+      {
+        "name": "Snapchat",
+        "link": "https://www.snapchat.com/add/tanish_the1?share_id=xOmpQxOJK3w&locale=en-CA"
       }
     ],
     "contact": {
-      "address": "2066 Barnboard Hollow, Oakville",
+      "city": "Oakville, ON, Canada",
       "mail": "atanish6@gmail.com",
-      "phone": "+1 (289)885-7256"
+      "phone": "+1 (289) 885-7256"
     }
   },
   "about": {
     "myImg": "./images/me.webp",
-    "aboutMe": "I am currently enrolled in the 3-Year Computer Systems Technology - Software Development And Network Engineering (SDNE) Program at Sheridan College, Oakville. I want to become a full stack developer in the future.",
-    "aboutMeLine2": "I am a ambivert and some of my interests are coding, music, anime, food, badminton, art and Harry Potter. I also read manga sometimes and really love superhero movies like Marvel and DC. ",
-    "skills": [
-      { "skill": "Cloud Architecture", "details": "Architecture, Microservices and Cloud Computing" },
-      { "skill": "AI-Ml", "details": "Data Engineering and Science, RAGs, Agents, Web Services" },
-      { "skill": "Java", "details": "SpringBoot, Thymeleaf, OOPS" },
-      { "skill": "Web Development", "details": "NodeJS, Angular, HTML, CSS, Javascript" }
-    ]
-    
+    "aboutMe": "I'm currently enrolled in the 3-Year Computer Systems Technology - Software Development and Network Engineering (SDNE) program at Sheridan College, Oakville, working toward becoming a full-stack developer.",
+    "aboutMeLine2": "I'm an ambivert with a wide range of interests outside of code, and I like bringing that same curiosity into how I build software.",
+    "careerGoal": "My goal is to launch my career as a full-stack developer, with a growing focus on cloud architecture and AI-powered systems.",
+    "interests": ["Coding", "Music", "Anime & Manga", "Food", "Badminton", "Art", "Harry Potter", "Superhero Movies"]
   },
-
+  "skillGroups": [
+    {
+      "category": "Languages",
+      "skills": [
+        { "skill": "Java", "details": "OOP, backend services" },
+        { "skill": "TypeScript", "details": "Typed, maintainable apps" },
+        { "skill": "JavaScript", "details": "Core web scripting" },
+        { "skill": "HTML & CSS", "details": "Semantic, accessible markup" }
+      ]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "skills": [
+        { "skill": "Angular", "details": "Standalone components, signals" },
+        { "skill": "Spring Boot", "details": "REST services, Thymeleaf" },
+        { "skill": "Node.js", "details": "Express-based backends" }
+      ]
+    },
+    {
+      "category": "Cloud & Architecture",
+      "skills": [
+        { "skill": "Microservices", "details": "Service-oriented design" },
+        { "skill": "Cloud Computing", "details": "Scalable app architecture" },
+        { "skill": "System Design", "details": "Architecture & data modeling" }
+      ]
+    },
+    {
+      "category": "AI & Data",
+      "skills": [
+        { "skill": "RAG Pipelines", "details": "Retrieval-augmented generation" },
+        { "skill": "AI Agents", "details": "Agentic workflows & tooling" },
+        { "skill": "Data Engineering", "details": "Data pipelines & services" }
+      ]
+    },
+    {
+      "category": "Tools",
+      "skills": [
+        { "skill": "Git & GitHub", "details": "Version control" },
+        { "skill": "MySQL", "details": "Relational databases" },
+        { "skill": "npm", "details": "Package & build tooling" }
+      ]
+    }
+  ],
   "footer": {
-    "unsplash": "https://unsplash.com/photos/an-airplane-is-flying-in-the-blue-sky-xwb9RDqZKu8",
-  "dev": "https://dev.to/okonkwomandy/the-easiest-way-to-build-the-pinterest-layout-without-using-a-framework-3i0g",
-  "splash": "https://www.squash.io/tutorial-date-subtraction-in-typescript/",
-  "codeease": "https://www.codeease.net/programming/html/how-to-download-file-html-button",
-  "material": "https://v7.material.angular.io/components/input/examples#:~:text=Input%20with%20a%20clear%20button",
-  "item1": "HTML",
-  "item2": "CSS",
-  "item2line": "To make it my own ",
-  "item3": "Angular",
-  "item3line": "To make it efficient and reusable ",
-  "item4": "Typescript",
-  "item4line": "For string interpolation for easy changes.",
-  "listHeading": "Technologies used to create this portfolio:"
+    "listHeading": "Built with",
+    "technologies": [
+      { "name": "Angular 20", "note": "Standalone, zoneless, signals" },
+      { "name": "TypeScript", "note": "End-to-end type safety" },
+      { "name": "Angular SSR", "note": "Server-rendered & prerendered" }
+    ]
   }
 }

@@ -1,0 +1,25 @@
+<section id="skills" class="section" aria-labelledby="skills-heading">
+  <div class="container">
+    <span class="section-eyebrow">Technical Skills</span>
+    <h2 id="skills-heading" class="section-heading">What I work with</h2>
+    <p class="section-intro">
+      Languages, frameworks, and tooling I use to design, build, and ship software end to end.
+    </p>
+
+    <div class="skills-grid">
+      @for (group of skillGroups(); track group.category) {
+        <div class="skill-group card" appRevealOnScroll>
+          <h3>{{ group.category }}</h3>
+          <ul>
+            @for (item of group.skills; track item.skill) {
+              <li>
+                <span class="skill-name">{{ item.skill }}</span>
+                <span class="skill-details">{{ item.details }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

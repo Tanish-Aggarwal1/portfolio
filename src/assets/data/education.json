@@ -1,0 +1,16 @@
+{
+  "education": [
+    {
+      "id": 1,
+      "program": "Computer Systems Technology – Software Development and Network Engineering (SDNE)",
+      "institution": "Sheridan College",
+      "startDate": "2024",
+      "endDate": "Apr 2027 (expected)",
+      "location": "Oakville, ON",
+      "details": [
+        "3-year advanced diploma covering software development, networking, and systems architecture."
+      ]
+    }
+  ],
+  "certifications": []
+}

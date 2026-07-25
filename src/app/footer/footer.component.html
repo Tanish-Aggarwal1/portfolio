@@ -1,15 +1,17 @@
-<hr>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copyright">&copy; {{ year }} {{ personal().first }} {{ personal().last }}</p>
 
-<footer>
-    <p class="stretch">
-        <span>&copy; Sheridan College &copy; Made by: {{ personal.first | uppercase }} {{ personal.last | uppercase }} </span>
-        <span>{{cdate | date}}</span>
-    </p>
+    <ul class="footer-tech">
+      <li class="footer-tech-heading">{{ footer().listHeading }}</li>
+      @for (tech of footer().technologies; track tech.name) {
+        <li class="badge" [title]="tech.note">{{ tech.name }}</li>
+      }
+    </ul>
 
-    
-   
-    <app-contact [socials]="personal.socials" [contact]="personal.contact"></app-contact>
-
-   
+    <a class="back-to-top" href="#top">
+      <app-icon name="arrow-up" [size]="16" />
+      Back to top
+    </a>
+  </div>
 </footer>
-<hr>

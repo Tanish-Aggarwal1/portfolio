@@ -1,17 +1,17 @@
-<div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <app-header [personal]="myData" [socials]="myData.socials"></app-header>
+<app-header [personal]="personal" />
+<app-nav [sections]="sections" />
 
-  <main>
+<main id="main-content">
+  <app-about [about]="about" />
+  <app-skills [skillGroups]="skillGroups" />
+  <app-projects [projects]="projects" />
+  @if (experience.length) {
+    <app-experience [entries]="experience" />
+  }
+  <app-education [entries]="education" [certifications]="certifications" />
+  <app-contact [personal]="personal" />
+</main>
 
-    <app-about [aboutMe]="aboutMe"></app-about>
-
-    <app-nav></app-nav>
-
-    <app-projects [projects]="projects"></app-projects>
-
-  </main>
-
-  <app-footer [personal]="myData" [footer]="footer"></app-footer>
-
-</div>
+<app-footer [personal]="personal" [footer]="footer" />

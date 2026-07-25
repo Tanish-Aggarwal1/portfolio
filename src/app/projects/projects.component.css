@@ -1,103 +1,39 @@
-img {
-    max-width: 90%;
-    aspect-ratio: 16/9;
-    display: block;
-    margin: 0 auto 0.6em;
-    border-radius: 0.5em;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+.projects-toolbar {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
 }
 
-
-mat-card-content {
-    width: 100%;
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 220px;
+  padding: 0.6rem var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
 }
 
-/* mat-card-title */
-
-mat-card-header>* {
-    font-weight: 200;
+.search-field input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  outline: none;
 }
 
-mat-card-footer,
-mat-card-header,
-mat-card-content {
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-5);
 }
 
-mat-card-footer {
-    margin: 20px auto;
-    background-color: rgb(155, 232, 232);
-    text-align: center;
-    font-weight: 300;
-    font-style: italic;
-}
-
-a:hover {
-    transform: translate(0, -0.1em);
-    transition: transform 0.7s ease;
-}
-
-.avatar {
-    background-color: lightskyblue;
-    background-size: cover;
-    text-align: center;
-    display: grid;
-    place-items: center;
-}
-
-
-.grid {
-    column-count: 2;
-    column-gap: 1em;
-}
-
-app-card {
-    display: inline-block;
-    margin: 0 0 1em;
-    width: 100%;
-}
-
-app-card:nth-child(odd) {
-    background: radial-gradient(circle, yellowgreen, rgba(153, 205, 50, 0.75));
-    border-radius: 0.5em;
-}
-
-app-card:nth-child(even) {
-    background: radial-gradient(circle, gold, rgba(255, 217, 0, 0.75));
-    border-radius: 0.5em;
-}
-
-app-card:nth-child(4n) {
-    background: radial-gradient(circle, hotpink, rgba(255, 105, 180, 0.75));
-    border-radius: 0.5em;
-
-}
-
-app-card:nth-child(7) {
-    background: radial-gradient(circle, royalblue, rgba(65, 105, 225, 0.75));
-    border-radius: 0.5em;
-}
-
-mat-form-field {
-    display: flex;
-}
-
-.find {
-    background-color: #f3f7fe;
-    color: #3b82f6;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    width: 100px;
-    height: 45px;
-    transition: 0.3s;
-    margin: 5px;
-}
-
-.find:hover {
-    background-color: #3b82f6;
-    box-shadow: 0 0 0 5px #3b83f65f;
-    color: #fff;
+.no-results {
+  color: var(--color-text-muted);
 }
