@@ -21,6 +21,9 @@ utilities, dark/light theme) lives in `src/styles.css`.
 
 ## Getting started
 
+Requires Node `^20.19.0 || ^22.12.0 || >=24.0.0` (see `.nvmrc` for the
+version used in CI).
+
 ```bash
 npm install
 npm start          # dev server at http://localhost:4200
